@@ -6,7 +6,7 @@ import LinkInClass from "../components/LinkInClass"
 
 import {SERVER_HOST} from "../config/global_constants"
 
-
+// erling 
 export default class Register extends Component
 {
     constructor(props)
