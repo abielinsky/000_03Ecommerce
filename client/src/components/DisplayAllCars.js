@@ -9,6 +9,9 @@ import Logout from "./Logout"
 import {ACCESS_LEVEL_GUEST, ACCESS_LEVEL_ADMIN, SERVER_HOST} from "../config/global_constants"
 
 
+/* test */
+
+
 export default class DisplayAllCars extends Component 
 {
     constructor(props) 
