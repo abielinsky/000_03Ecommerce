@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "empty-folder": "^2.0.4",
+    "multer": "^1.4.5-lts.1"
+  }
+}
