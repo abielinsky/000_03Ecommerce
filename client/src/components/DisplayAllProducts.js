@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import {Link} from "react-router-dom"
 import axios from "axios"
 import ProductTable from "./ProductTable"
-import Logout from "../components2/Logout"
+import Logout from "../components/Logout"
 import {ACCESS_LEVEL_GUEST, ACCESS_LEVEL_ADMIN, SERVER_HOST} from "../config/global_constants"
 
 export default class DisplayAllProducts extends Component
