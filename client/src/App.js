@@ -8,15 +8,13 @@ import Register from "./components/Register"
 import ResetDatabase from "./components/ResetDatabase"
 import Login from "./components/Login"
 import Logout from "./components/Logout"
-import AddCar from "./components/AddCar"
-import EditCar from "./components/EditCar"
-import DeleteCar from "./components/DeleteCar"
-import DisplayAllCars from "./components/DisplayAllCars"
+import AddProduct from "./components/AddProduct"
+import EditProduct from "./components/EditProduct"
+import DeleteProduct from "./components/DeleteProduct"
+import DisplayAllProducts from "./components/DisplayAllProducts"
 import LoggedInRoute from "./components/LoggedInRoute"
 
-
 import {ACCESS_LEVEL_GUEST} from "./config/global_constants"
-
 
 if (typeof localStorage.accessLevel === "undefined")
 {
@@ -25,24 +23,23 @@ if (typeof localStorage.accessLevel === "undefined")
     localStorage.token = null
 }
 
-    
-export default class App extends Component 
+export default class App extends Component
 {
-    render() 
+    render()
     {
         return (
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/Register" component={Register} />
-                    <Route exact path="/ResetDatabase" component={ResetDatabase} />                    
-                    <Route exact path="/" component={DisplayAllCars} />
+                    <Route exact path="/ResetDatabase" component={ResetDatabase} />
+                    <Route exact path="/" component={DisplayAllProducts} />
                     <Route exact path="/Login" component={Login} />
                     <LoggedInRoute exact path="/Logout" component={Logout} />
-                    <LoggedInRoute exact path="/AddCar" component={AddCar} />
-                    <LoggedInRoute exact path="/EditCar/:id" component={EditCar} />
-                    <LoggedInRoute exact path="/DeleteCar/:id" component={DeleteCar} />
-                    <Route exact path="/DisplayAllCars" component={DisplayAllCars}/> 
-                    <Route path="*" component={DisplayAllCars}/>                            
+                    <LoggedInRoute exact path="/AddProduct" component={AddProduct} />
+                    <LoggedInRoute exact path="/EditProduct/:id" component={EditProduct} />
+                    <LoggedInRoute exact path="/DeleteProduct/:id" component={DeleteProduct} />
+                    <Route exact path="/DisplayAllProducts" component={DisplayAllProducts}/>
+                    <Route path="*" component={DisplayAllProducts}/>
                 </Switch>
             </BrowserRouter>
         )

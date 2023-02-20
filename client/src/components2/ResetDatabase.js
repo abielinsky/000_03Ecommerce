@@ -58,13 +58,13 @@ export default class ResetDatabase extends Component
         return (
             <form className="form-container" noValidate = {true} id = "loginOrRegistrationForm">
 
-               {this.state.isReset ? <Redirect to="/DisplayAllProducts"/> : null} 
+               {this.state.isReset ? <Redirect to="/DisplayAllCars"/> : null} 
 
                 <p>"Reset User Database" is only for testing purposes.<br/>All code on the client-side and server-side relating to resetting the database should be removed from any development release</p>
                 <LinkInClass value="Reset User Database" className="red-button" onClick={this.resetUsersModel}/> <br/><br/>
                 <p>Reset the database and set up an administrator with:<br/> * email <strong>admin@admin.com</strong><br/> * password <strong>123!"£qweQWE</strong></p>        
             
-                <Link className="red-button" to={"/DisplayAllProducts"}>Cancel</Link>
+                <Link className="red-button" to={"/DisplayAllCars"}>Cancel</Link>
             </form>
         )
     }
