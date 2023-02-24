@@ -34,16 +34,13 @@ export default class DisplayAllProducts extends Component {
   }
 
 
-
-
-
   render() {
     return (
 
       <div>
         <header>                                                               
-            <div class="topnav">
-                <img class="hp" src="./Image/Callaghans-Butchers-logo-lrg.png" width="250"  alt=""/>
+            <div className="topnav">
+                <img className="hp" src="./Image/Callaghans-Butchers-logo-lrg.png" width="250"  alt=""/>
                 <a href="Home">Home</a>
               </div>
         </header>
@@ -98,7 +95,7 @@ export default class DisplayAllProducts extends Component {
 </main>
 
 
-<img  src={require(`../Image/bakery-53.png`)} class="imagen1"  alt=""/>
+<img  src={require(`../Image/bakery-53.png`)} className="imagen1"  alt=""/>
       <footer>
      
             <div class="row">
