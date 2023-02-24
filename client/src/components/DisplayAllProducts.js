@@ -12,6 +12,7 @@ export default class DisplayAllProducts extends Component {
 
     this.state = {
       products: [],
+
     };
   }
 
@@ -32,10 +33,25 @@ export default class DisplayAllProducts extends Component {
       });
   }
 
+
+
+
+
   render() {
     return (
-      <div className="form-container">
-        {localStorage.accessLevel > ACCESS_LEVEL_GUEST ? (
+
+      <div>
+        <header>                                                               
+            <div class="topnav">
+                <img class="hp" src="./Image/Callaghans-Butchers-logo-lrg.png" width="250"  alt=""/>
+                <a href="Home">Home</a>
+              </div>
+        </header>
+      
+
+<main>
+
+{localStorage.accessLevel > ACCESS_LEVEL_GUEST ? (
           <div className="logout">
             {localStorage.profilePhoto !== "null" ? (
               <img
@@ -63,6 +79,8 @@ export default class DisplayAllProducts extends Component {
             <br />
           </div>
         )}
+     <div className="form-container">
+       
         {/* <Filters products={this.state.products} /> */}
 
         <div className="table-container">
@@ -76,6 +94,37 @@ export default class DisplayAllProducts extends Component {
             </div>
           ) : null}
         </div>
+      </div>
+</main>
+
+
+<img  src={require(`../Image/bakery-53.png`)} class="imagen1"  alt=""/>
+      <footer>
+     
+            <div class="row">
+                <div class="column">
+                    <h3><strong>Opening hours:</strong></h3>
+                    <h5>Monday-Saturday: 9am - 6pm</h5>
+                    <h5> Closed on Sunday</h5>
+                </div>
+
+                <div class="column">
+                    <h3> <strong>Visit Us:</strong></h3>
+                    <h5>Unit 4, The Anchorage</h5>
+                    <h5> Bettystown, Co. Meath, A92 RK38</h5>
+                    <h5>(041) 988 7885</h5>
+                </div>
+
+                <div class="column">
+                    <h3><strong>Follow us:</strong></h3>
+            
+                    <a href="https://www.facebook.com/callaghan.bettystown/"><img src={require(`../Image/facebook.png`)}   class="icon-style" width="50" alt="facebook"/></a>
+                    <a href="https://www.instagram.com/callaghanbutchers/"><img src={require(`../Image/instagram_grey_icon.png`)} class="icon-style"   width="50" alt="instagram"/></a>
+                </div>  
+            </div>
+        </footer>
+
+
       </div>
     );
   }

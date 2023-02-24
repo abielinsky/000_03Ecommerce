@@ -7,7 +7,7 @@ let productsSchema = new mongoose.Schema(
         description: { type: String },
         price: { type: Number },
         weight: { type: Number },
-        image: { type: String },
+        image: { type: Array },
         category: { type: String }
     },
     {
