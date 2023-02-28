@@ -22,6 +22,7 @@ export default class AddProduct extends Component
             weight:"",
             image:"",
             category:"",
+            selectedFile:[],
             redirectToDisplayAllProducts:localStorage.accessLevel < ACCESS_LEVEL_ADMIN
         }
     }
@@ -38,6 +39,12 @@ export default class AddProduct extends Component
         this.setState({[e.target.name]: e.target.value})
     }
 
+    handleFileChange = (e) =>
+    {
+        this.setState({selectedFile: e.target.files})
+  
+    }
+
 
     handleSubmit = (e) => 
     {
@@ -48,9 +55,17 @@ export default class AddProduct extends Component
             description: this.state.description,
             price: this.state.price,
             weight: this.state.weight,
-            image: this.state.image,
+            image: [],
             category: this.state.category
-        }
+        };
+
+        let arr = Array.from(this.state.selectedFile)
+        arr.forEach((file) => {
+          productObject.image.push(file.name)
+        })
+    
+        console.log(productObject.image)
+    
 
         axios.post(`${SERVER_HOST}/products`, productObject, {headers:{"authorization":localStorage.token}})
         .then(res => 
@@ -104,7 +119,7 @@ export default class AddProduct extends Component
 
                     <Form.Group controlId="image">
                         <Form.Label>Image</Form.Label>
-                        <Form.Control type="text" name="image" value={this.state.image} onChange={this.handleChange} />
+                        <Form.Control type="file" name="image"  onChange={this.handleFileChange} multiple= {true} />
                     </Form.Group>
 
                     <Form.Group controlId="category">

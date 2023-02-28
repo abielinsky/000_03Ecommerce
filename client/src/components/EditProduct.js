@@ -18,6 +18,7 @@ export default class EditProduct extends Component {
       weight: ``,
       image: ``,
       category: ``,
+      selectedFile:[],
       redirectToDisplayAllCars:localStorage.accessLevel < ACCESS_LEVEL_NORMAL_USER
     };
   }
@@ -53,6 +54,14 @@ export default class EditProduct extends Component {
     this.setState({[e.target.name]: e.target.value});
   };
 
+  
+  handleFileChange = (e) =>
+  {
+      this.setState({selectedFile: e.target.files})
+
+  }
+
+
   handleSubmit = (e) => {
     e.preventDefault();
 
@@ -61,9 +70,17 @@ export default class EditProduct extends Component {
       description: this.state.description,
       price: this.state.price,
       weight: this.state.weight,
-      image: this.state.image,
+      image: [],
       category: this.state.category,
     };
+
+    let arr = Array.from(this.state.selectedFile)
+    arr.forEach((file) => {
+      productObject.image.push(file.name)
+    })
+
+    console.log(productObject.image)
+
 
     axios
       .put(
@@ -139,11 +156,13 @@ export default class EditProduct extends Component {
           <Form.Group controlId="image">
             <Form.Label>Image</Form.Label>
             <Form.Control
-              type="text"
-              name="image"
-              value={this.state.image}
-              onChange={this.handleChange}
-              />
+              type="file"
+              // name="image"
+              // value={this.state.image}
+              onChange={this.handleFileChange} multiple= {true}
+
+            />
+
               </Form.Group>
               <Form.Group controlId="category">
             <Form.Label>Catergory</Form.Label>
