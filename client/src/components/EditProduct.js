@@ -79,6 +79,11 @@ export default class EditProduct extends Component {
       productObject.image.push(file.name)
     })
 
+    if(this.state.selectedFile.length < 1) {
+      alert("Please select a file to upload")
+      return;
+  }
+
     console.log(productObject.image)
 
 

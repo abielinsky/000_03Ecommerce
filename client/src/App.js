@@ -35,8 +35,7 @@ export default class App extends Component
                     <Route exact path="/ResetDatabase" component={ResetDatabase} />
                     <Route exact path="/" component={DisplayAllProducts} />
                     <Route exact path="/Login" component={Login} />
-                    {/* <Route exact path="/Filters/:id" component={Filters} /> */}
-
+                
                     <LoggedInRoute exact path="/Logout" component={Logout} />
                     <LoggedInRoute exact path="/AddProduct" component={AddProduct} />
                     <LoggedInRoute exact path="/EditProduct/:id" component={EditProduct} />

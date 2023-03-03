@@ -2,6 +2,15 @@ import React, { Component } from "react";
 import ProductTableRow from "./ProductTableRow";
 
 export default class ProductTable extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            tempProducts: this.props.products,
+        };
+    }
+
+
     render() {
         return (
         

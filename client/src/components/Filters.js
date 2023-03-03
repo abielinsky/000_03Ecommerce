@@ -93,13 +93,7 @@ export default class Filters extends Component {
 
   render() {
     return (
-      <div className="form-container">
-        {this.state.redirectToDisplayAllProducts ? (
-          <Redirect to="/DisplayAllProducts" />
-        ) : null}
-
-
-
+      <div className="sort-container">
         <select id="alignAttractionFilter" onChange={this.handleClick}>
           <option value="Name list">Name List</option>
           <option value="Ascending">A-Z</option>
