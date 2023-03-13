@@ -14,11 +14,11 @@ export default class ProductTable extends Component {
     render() {
         return (
         
-                <tbody>
+                <div>
   {this.props.products.map((product) => (
     <ProductTableRow key={product.id} product={product} />
   ))}
-</tbody>
+</div>
           
         );
     }

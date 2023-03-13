@@ -43,10 +43,10 @@ export default class ProductTableRow extends Component {
       <div class= "container">
         <div className="product-table-cell">
          
-          <div class= "container">
-            <img  src={require(`../Image/${this.props.product.image[activeIndex]}`)}  alt="" style={{ width: "420px", height: "370px" } } className="imageP"/>
-            <button onClick= {this.handleNextClick} className="next_round">&#8249;</button>
-            <button onClick= {this.handlePrevClick} className="previous_round">&#8250;</button>
+          <div className="container-wrapper" >
+            <img  class="imageP" src={require(`../Image/${this.props.product.image[activeIndex]}`)}  alt=""  />
+            <button onClick= {this.handleNextClick} className="next_round">&#8250;</button>
+            <button onClick= {this.handlePrevClick} className="previous_round"> &#8249;</button>
             </div>
            
         {/* <p >{this.props.product.id}</p> */}

@@ -94,33 +94,50 @@ export default class DisplayAllProducts extends Component {
   };
 
 
+  // handleCategoryClick = (e) => {
+  //   if (e.target.value === "Ascending") {
+  //     /// SORT IN ASCENDING ORDER///
+  //     this.setState({
+  //       tempProducts: this.state.products.sort((a, b) =>
+  //         a.category.localeCompare(b.category)
+  //       ),
+  //     });
+  //   } else {
+  //     /// SORT IN DESCENDING ORDER///
+  //     this.setState({
+  //       tempProducts: this.state.products.sort((a, b) =>
+  //         b.category.localeCompare(a.category)
+  //       ),
+  //     });
+  //   }
+  //   console.log("sort by category");
+  // };
+
   handleCategoryClick = (e) => {
-    if (e.target.value === "Ascending") {
-      /// SORT IN ASCENDING ORDER///
-      this.setState({
-        tempProducts: this.state.products.sort((a, b) =>
-          a.category.localeCompare(b.category)
-        ),
-      });
-    } else {
-      /// SORT IN DESCENDING ORDER///
-      this.setState({
-        tempProducts: this.state.products.sort((a, b) =>
-          b.category.localeCompare(a.category)
-        ),
-      });
+    const category = e.target.value;
+    let sortedProducts = [...this.state.products];
+  
+    if (category === "All") {
+      // no filtering necessary
+    } else if (category === "Beef") {
+      sortedProducts = sortedProducts.filter(product => product.category === "Beef");
+    } else if (category === "Pork") {
+      sortedProducts = sortedProducts.filter(product => product.category === "Pork");
+    } else if (category === "Lamb") {
+      sortedProducts = sortedProducts.filter(product => product.category === "Lamb");
     }
-    console.log("sort by category");
+  
+    this.setState({ tempProducts: sortedProducts }, () => {
+      console.log("New state:", this.state);
+    });
   };
-
-
 
 
 
 
   handleSearch = (e) => {
     const search = e.target.value.toLowerCase().trim();
-    if (search == "") {
+    if (search === "") {
     
       return this.state.tempProducts;
     }
@@ -137,22 +154,30 @@ export default class DisplayAllProducts extends Component {
     }
   }
 
-
-
-
   render() {
     return (
 
       <div>
         <header>                                                               
             <div className="topnav">
-                <img className="hp" src="./Image/Callaghans-Butchers-logo-lrg.png" width="250"  alt=""/>
-                <a href="Home">Home</a>
+                <img className="hp" src= {require(`../Image/Callaghans-Butchers-logo-lrg.png`)} width="250"  alt=""/>
+                <div class="containerSearch">
+                <input id="search" type="text" placeholder="  Search" onChange= {this.handleSearch}/>
+                </div>
+                {/* <a href="Home">Home</a> */}
               </div>
         </header>
-      
-
 <main>
+
+            <div class="containerA">
+            <img src={require(`../Image/Callaghans-Circle-logo-400-400x382.png`)}  alt=""width="180" height="180" />
+            <h2>Feeding families & friends</h2> 
+            <h3>since 1906</h3>
+            <img src={require(`../Image/Callaghans-Butchers-meat-HP.jpg`)} alt=""width="650" height="520" />
+            <img  src={require(`../Image/special-offers-banner.png`)}  alt=""width="1000" height="120"/>
+            </div>
+        
+
 
 {localStorage.accessLevel > ACCESS_LEVEL_GUEST ? (
           <div className="logout">
@@ -183,9 +208,9 @@ export default class DisplayAllProducts extends Component {
           </div>
         )}
 
-<input id="search" type="text" placeholder="  Search" onChange= {this.handleSearch}/>
 
      <div className="form-container">
+
      <div className="sort-container">
         <select id="alignFilter" onChange={this.handleClick}>
           <option value="Name list">Name List</option>
@@ -209,15 +234,18 @@ export default class DisplayAllProducts extends Component {
             <div className="form-container">
      <div className="sort-container">
         <select id="alignFilter" onChange={this.handleCategoryClick}>
-          <option value="Name list">Category</option>
-          <option value="Ascending">A-Z</option>
-          <option value="Descending">Z-A</option>
+        <option value="All">Category</option>
+      <option value="Beef">Beef</option>
+      <option value="Pork">Pork</option>
+      <option value="Lamb">Lamb</option>
         </select>
       </div>
-
 </div>
         {/* <Filters products={this.state.products} /> */}
 
+
+      
+        
         <div className="table-container">
           <ProductTable products={this.state.tempProducts}/>
 
@@ -236,21 +264,21 @@ export default class DisplayAllProducts extends Component {
 <img  src={require(`../Image/bakery-53.png`)} className="imagen1"  alt=""/>
       <footer>
      
-            <div class="row">
-                <div class="column">
+            <div className="row">
+                <div className="column">
                     <h3><strong>Opening hours:</strong></h3>
                     <h5>Monday-Saturday: 9am - 6pm</h5>
                     <h5> Closed on Sunday</h5>
                 </div>
 
-                <div class="column">
+                <div className="column">
                     <h3> <strong>Visit Us:</strong></h3>
                     <h5>Unit 4, The Anchorage</h5>
                     <h5> Bettystown, Co. Meath, A92 RK38</h5>
                     <h5>(041) 988 7885</h5>
                 </div>
 
-                <div class="column">
+                <div className="column">
                     <h3><strong>Follow us:</strong></h3>
             
                     <a href="https://www.facebook.com/callaghan.bettystown/"><img src={require(`../Image/facebook.png`)}   class="icon-style" width="50" alt="facebook"/></a>
