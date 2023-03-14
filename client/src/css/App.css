@@ -350,20 +350,25 @@ img[alt="special-offers-banner"] {
 .card-deck2 {
 
   width: 270px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-basis: calc(10% - 270px); /* subtract margin from flex-basis */
-  box-sizing: border-box; /* include padding and border in box-sizing */
+  display: inline-flex;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-end;
+  /*flex-basis: calc(10% - 270px); !* subtract margin from flex-basis *!*/
+  /*box-sizing: border-box; !* include padding and border in box-sizing *!*/
+
 }
 
-/*.card {*/
+.card {
 /*  width: 270px;*/
-/*  height: auto;*/
+  height: 820px;
 /*  margin-bottom: 20px;*/
 /*  flex-basis: calc(10% - 270px); !* subtract margin from flex-basis *!*/
 /*  box-sizing: border-box; !* include padding and border in box-sizing *!*/
-/*}*/
+  padding: 0px 20px 0 20px;
+}
+
+
+
 
 .card-footer{
   width: 270px;
@@ -380,7 +385,7 @@ img[alt="special-offers-banner"] {
 
 
 .container-wrapper{
-  width: 270px;
+  width: 250px;
 }
 
 
@@ -556,3 +561,78 @@ input [type="button"] *
 } */
 
 /* ===========================================CSS ABIEL =============================================================*/
+
+
+
+
+/* ===========================================CSS FORM  =============================================================*/
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button.green-button,
+a.red-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+a.red-button {
+  background-color: #dc3545;
+  margin-left: 0.5rem;
+}
+
+button.green-button:hover,
+a.red-button:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 480px) {
+  input[type="text"],
+  input[type="file"] {
+    font-size: 0.9rem;
+  }
+
+  button.green-button,
+  a.red-button {
+    font-size: 0.9rem;
+  }
+}
+/*====================================================================================================================*/

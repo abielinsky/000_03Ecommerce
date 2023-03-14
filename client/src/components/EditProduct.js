@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Form from "react-bootstrap/Form";
+// import Form from "react-bootstrap/Form";
 import {Redirect, Link} from "react-router-dom";
 import axios from "axios";
 import AppNavbar from "./AppNavbar";
@@ -117,75 +117,164 @@ export default class EditProduct extends Component {
           <Redirect to="/DisplayAllProducts" />
         ) : null}
 
-        <Form>
-          <Form.Group controlId="name">
-            <Form.Label>Name</Form.Label>
-            <Form.Control
-              ref={(input) => {
-                this.inputToFocus = input;
-              }}
-              type="text"
-              name="name"
-              value={this.state.name}
-              onChange={this.handleChange}
+        {/*<Form>*/}
+        {/*  <Form.Group controlId="name">*/}
+        {/*    <Form.Label>Name</Form.Label>*/}
+        {/*    <Form.Control*/}
+        {/*      ref={(input) => {*/}
+        {/*        this.inputToFocus = input;*/}
+        {/*      }}*/}
+        {/*      type="text"*/}
+        {/*      name="name"*/}
+        {/*      value={this.state.name}*/}
+        {/*      onChange={this.handleChange}*/}
+        {/*    />*/}
+        {/*  </Form.Group>*/}
+
+        {/*  <Form.Group controlId="description">*/}
+        {/*    <Form.Label>Description</Form.Label>*/}
+        {/*    <Form.Control*/}
+        {/*      type="text"*/}
+        {/*      name="description"*/}
+        {/*      value={this.state.description}*/}
+        {/*      onChange={this.handleChange}*/}
+        {/*    />*/}
+        {/*  </Form.Group>*/}
+
+        {/*  <Form.Group controlId="price">*/}
+        {/*    <Form.Label>Price</Form.Label>*/}
+        {/*    <Form.Control*/}
+        {/*      type="text"*/}
+        {/*      name="price"*/}
+        {/*      value={this.state.price}*/}
+        {/*      onChange={this.handleChange}*/}
+        {/*    />*/}
+        {/*  </Form.Group>*/}
+
+        {/*  <Form.Group controlId="weight">*/}
+        {/*    <Form.Label>Weight</Form.Label>*/}
+        {/*    <Form.Control*/}
+        {/*      type="text"*/}
+        {/*      name="weight"*/}
+        {/*      value={this.state.weight}*/}
+        {/*      onChange={this.handleChange}*/}
+        {/*    />*/}
+        {/*  </Form.Group>*/}
+
+        {/*  <Form.Group controlId="image">*/}
+        {/*    <Form.Label>Image</Form.Label>*/}
+        {/*    <Form.Control*/}
+        {/*      type="file"*/}
+        {/*      // name="image"*/}
+        {/*      // value={this.state.image}*/}
+        {/*      onChange={this.handleFileChange} multiple= {true}*/}
+
+        {/*    />*/}
+
+        {/*      </Form.Group>*/}
+        {/*      <Form.Group controlId="category">*/}
+        {/*    <Form.Label>Catergory</Form.Label>*/}
+        {/*    <Form.Control*/}
+        {/*      type="text"*/}
+        {/*      name="category"*/}
+        {/*      value={this.state.category}*/}
+        {/*      onChange={this.handleChange}*/}
+        {/*      />*/}
+        {/*      </Form.Group>*/}
+        {/*      <LinkInClass value="Update" className="green-button" onClick={this.handleSubmit}/>  */}
+
+        {/*      <Link className="red-button" to={"/DisplayAllProducts"}>Cancel</Link>*/}
+
+        {/*      </Form>*/}
+
+        <form>
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+                type="text"
+                name="name"
+                id="name"
+                className="form-control"
+                value={this.state.name}
+                onChange={this.handleChange}
+                ref={(input) => {
+                  this.inputToFocus = input;
+                }}
             />
-          </Form.Group>
+          </div>
 
-          <Form.Group controlId="description">
-            <Form.Label>Description</Form.Label>
-            <Form.Control
-              type="text"
-              name="description"
-              value={this.state.description}
-              onChange={this.handleChange}
+          <div className="form-group">
+            <label htmlFor="description">Description</label>
+            <input
+                type="text"
+                name="description"
+                id="description"
+                className="form-control"
+                value={this.state.description}
+                onChange={this.handleChange}
             />
-          </Form.Group>
+          </div>
 
-          <Form.Group controlId="price">
-            <Form.Label>Price</Form.Label>
-            <Form.Control
-              type="text"
-              name="price"
-              value={this.state.price}
-              onChange={this.handleChange}
+          <div className="form-group">
+            <label htmlFor="price">Price</label>
+            <input
+                type="text"
+                name="price"
+                id="price"
+                className="form-control"
+                value={this.state.price}
+                onChange={this.handleChange}
             />
-          </Form.Group>
+          </div>
 
-          <Form.Group controlId="weight">
-            <Form.Label>Weight</Form.Label>
-            <Form.Control
-              type="text"
-              name="weight"
-              value={this.state.weight}
-              onChange={this.handleChange}
+          <div className="form-group">
+            <label htmlFor="weight">Weight</label>
+            <input
+                type="text"
+                name="weight"
+                id="weight"
+                className="form-control"
+                value={this.state.weight}
+                onChange={this.handleChange}
             />
-          </Form.Group>
+          </div>
 
-          <Form.Group controlId="image">
-            <Form.Label>Image</Form.Label>
-            <Form.Control
-              type="file"
-              // name="image"
-              // value={this.state.image}
-              onChange={this.handleFileChange} multiple= {true}
-
+          <div className="form-group">
+            <label htmlFor="image">Image</label>
+            <input
+                type="file"
+                name="image"
+                id="image"
+                className="form-control-file"
+                onChange={this.handleFileChange}
+                multiple={true}
             />
+          </div>
 
-              </Form.Group>
-              <Form.Group controlId="category">
-            <Form.Label>Catergory</Form.Label>
-            <Form.Control
-              type="text"
-              name="category"
-              value={this.state.category}
-              onChange={this.handleChange}
-              />
-              </Form.Group>
-              <LinkInClass value="Update" className="green-button" onClick={this.handleSubmit}/>  
-    
-              <Link className="red-button" to={"/DisplayAllProducts"}>Cancel</Link>
+          <div className="form-group">
+            <label htmlFor="category">Category</label>
+            <input
+                type="text"
+                name="category"
+                id="category"
+                className="form-control"
+                value={this.state.category}
+                onChange={this.handleChange}
+            />
+          </div>
 
-              </Form>
+          <button type="submit" className="green-button" onClick={this.handleSubmit}>
+            Update
+          </button>
+
+          <a href="/DisplayAllProducts" className="red-button">Cancel</a>
+        </form>
+
+
+
+
+
+
             </div>
         </>
         )
