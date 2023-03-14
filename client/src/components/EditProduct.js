@@ -83,7 +83,42 @@ export default class EditProduct extends Component {
     if(this.state.selectedFile.length < 1) {
       alert("Please select a file to upload")
       return;
-  }
+      }
+
+    if(this.state.name.length<1)
+    {
+      alert("Please give a name to the product")
+      return;
+    }
+
+    if(this.state.description.length<1)
+    {
+      alert("Please give a description to the product")
+      return;
+    }
+
+    if(this.state.price.length<1)
+    {
+      alert("Please give the price to the product")
+      return;
+    }
+
+    if(this.state.weight.length<1)
+    {
+      alert("Please give the weight to the product")
+      return;
+    }
+
+    if(this.state.category.length<1)
+    {
+      alert("Please give the category (ex: beef, pork, lamb) to the product")
+      return;
+    }
+
+
+
+
+
 
     console.log(productObject.image)
 

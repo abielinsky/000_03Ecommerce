@@ -566,11 +566,26 @@ input [type="button"] *
 
 
 /* ===========================================CSS FORM  =============================================================*/
+
+input:invalid {
+  border: 1px solid red;
+}
+
+input:valid {
+  border: 1px solid #5ade25;
+}
+
+
 form {
   max-width: 600px;
   margin: 0 auto;
   border: 1px solid #ccc;
-  padding: 1rem;
+  padding: 50px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+form:hover {
+  box-shadow: 0 0 900px rgba(0,0,0,5);
 }
 
 .form-group {
@@ -583,25 +598,24 @@ label {
   font-weight: bold;
 }
 
-input[type="text"],
-input[type="file"] {
-  display: block;
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-  transition: border-color 0.2s ease-in-out;
-}
+/*input[type="text"],*/
+/*input[type="file"] {*/
+/*  display: block;*/
+/*  width: 100%;*/
+/*  padding: 0.5rem;*/
+/*  font-size: 1rem;*/
+/*  border: 1px solid #ccc;*/
+/*  border-radius: 0.25rem;*/
+/*  transition: border-color 0.2s ease-in-out;*/
+/*}*/
 
-input[type="text"]:focus,
-input[type="file"]:focus {
-  border-color: #007bff;
-  outline: none;
-}
+/*input[type="text"]:focus,*/
+/*input[type="file"]:focus {*/
+/*  border-color: #007bff;*/
+/*  outline: none;*/
+/*}*/
 
-button.green-button,
-a.red-button {
+button.green-button {
   display: inline-block;
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -611,18 +625,49 @@ a.red-button {
   background-color: #28a745;
   border: none;
   border-radius: 0.25rem;
-  transition: background-color 0.2s ease-in-out;
-}
-
-a.red-button {
-  background-color: #dc3545;
-  margin-left: 0.5rem;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 button.green-button:hover,
-a.red-button:hover {
-  background-color: #218838;
+button.green-button:focus {
+  background-color: #60a84b;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
+
+a.green-button:hover {
+  background-color: #7bd746;
+}
+
+
+a.red-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 0.25rem;
+  margin-left: 0.5rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+a.red-button:hover {
+  border-radius: 0.25rem;
+  background-color: #883421;
+}
+
+button.red-button:hover,
+button.red-button:focus {
+  background-color: #d5622e;
+  border-radius: 0.25rem;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  transform: translateX(-2px);
+}
+
+
 
 @media (max-width: 480px) {
   input[type="text"],
@@ -634,5 +679,15 @@ a.red-button:hover {
   a.red-button {
     font-size: 0.9rem;
   }
+
+
+
 }
 /*====================================================================================================================*/
+/*====================================================================================================================*/
+
+
+
+
+
+
