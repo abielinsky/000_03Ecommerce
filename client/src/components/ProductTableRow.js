@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {Form, Button, Row} from "react-bootstrap";
+// import {Form, Button, Row} from "react-bootstrap";
 import { ACCESS_LEVEL_GUEST, ACCESS_LEVEL_ADMIN, ACCESS_LEVEL_NORMAL_USER } from "../config/global_constants";
 
 export default class ProductTableRow extends Component {
@@ -42,8 +42,6 @@ export default class ProductTableRow extends Component {
 
 
 
-
-
     componentDidMount(){
     }
 
@@ -62,7 +60,7 @@ export default class ProductTableRow extends Component {
         const {activeIndex}=this.state
 
         return (
-            <div className= "card">
+            <div className= "card1">
 
                 <div className="container-wrapper">
                     <img className="imageP" src={require(`../Image/${this.props.product.image[activeIndex]}`)} alt=""/>
@@ -70,21 +68,20 @@ export default class ProductTableRow extends Component {
                     <button onClick={this.handlePrevClick} className="previous_round"> &#8249;</button>
                 </div>
 
-                {/*<img className="card-img-top" src={require(`../Image/${this.props.product.image[0]}`)} alt="product"/>*/}
-                <div className="card-body">
-                    <h5 className="card-title">{this.props.product.name}</h5>
-                    <p className="card-text" >{this.props.product.description}</p>
-                    <p className="card-text"><strong>price:</strong> {this.props.product.price}€</p>
-                    <p className="card-text"><strong>wight:</strong> {this.props.product.weight}</p>
-                    <p className="card-text"><strong>category:</strong> {this.props.product.category}</p>
+                <div className="desWrap">
+                    <h6 className="">{this.props.product.name}</h6>
+                    <p className="" >{this.props.product.description}</p>
+                    <p className=""><strong>price: €</strong> {this.props.product.price}</p>
+                    <p className=""><strong>wight:</strong> {this.props.product.weight}</p>
+                    <p className=""><strong>category:</strong> {this.props.product.category}</p>
                 </div>
-                <div className="card-footer">
+                <div className="">
                     {localStorage.accessLevel == ACCESS_LEVEL_NORMAL_USER ? (
-                        <Row>
+                        <div>
                             <div className="col-1"/>
                             <input className="form-control col-3" name="quantity" type="number" min={0} max={10} value={this.state.quantity} onChange={this.onChange} />
-                            <Button className="default-button col-2" disabled={this.state.quantity<=0}  onClick={()=>this.onSendToCart(this.props.product._id)}>+</Button>
-                        </Row>
+                            <button className="default-button col-2" disabled={this.state.quantity<=0}  onClick={()=>this.onSendToCart(this.props.product._id)}>+</button>
+                        </div>
                     ) : (
                         null
                     )}

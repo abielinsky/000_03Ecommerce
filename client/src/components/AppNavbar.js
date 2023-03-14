@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Logout from "./Logout";
 import { Link } from "react-router-dom";
-import { Container, Nav, Navbar } from "react-bootstrap";
+ import { Container, Nav, Navbar } from "react-bootstrap";
 import { ACCESS_LEVEL_GUEST } from "../config/global_constants";
 
 export default class AppNavbar extends Component {
@@ -52,9 +52,9 @@ export default class AppNavbar extends Component {
 
         const guestLinks = (
             <Nav className="me-auto">
-                <Nav.Link href={"/Register"}>Register</Nav.Link>
-                <Nav.Link href={"/Login"}>Login</Nav.Link>
-                <Nav.Link href={"/ResetDatabase"}>Reset db</Nav.Link>
+                <Nav.Link href={"/Register"}><a>Register</a></Nav.Link>
+                <Nav.Link href={"/Login"}><a>Login</a></Nav.Link>
+                <Nav.Link href={"/ResetDatabase"}><a>Reset db</a></Nav.Link>
             </Nav>
         );
 
@@ -62,7 +62,12 @@ export default class AppNavbar extends Component {
             <>
                 <Navbar bg="dark" variant="dark" fixed="top">
                     <div className="container-fluid">
-                        <Navbar.Brand href="/">E-Commerce Store</Navbar.Brand>
+                       
+                        <div className="topnav">
+                <img className="hp" src= {require(`../Image/Callaghans-Butchers-logo-lrg.png`)}   alt=""/>
+                
+                {/* <a href="Home">Home</a> */}
+              </div>
                         {isAuthenticated ? authLinks : guestLinks}
                     </div>
                 </Navbar>

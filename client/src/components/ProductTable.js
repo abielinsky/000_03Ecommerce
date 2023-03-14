@@ -24,7 +24,7 @@ export default class ProductTable extends Component {
         return (
             <>
                 { this.chunk(this.props.products, 5).map((groups) => (
-                    <div className="card-deck" key={groups.idx}>
+                    <div className="card-deck1" key={groups.idx}>
                         { groups.group.map((product, index)=>
                             <ProductTableRow
                                 key={product._id}

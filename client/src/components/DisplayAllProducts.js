@@ -97,24 +97,7 @@ export default class DisplayAllProducts extends Component {
   };
 
 
-  // handleCategoryClick = (e) => {
-  //   if (e.target.value === "Ascending") {
-  //     /// SORT IN ASCENDING ORDER///
-  //     this.setState({
-  //       tempProducts: this.state.products.sort((a, b) =>
-  //         a.category.localeCompare(b.category)
-  //       ),
-  //     });
-  //   } else {
-  //     /// SORT IN DESCENDING ORDER///
-  //     this.setState({
-  //       tempProducts: this.state.products.sort((a, b) =>
-  //         b.category.localeCompare(a.category)
-  //       ),
-  //     });
-  //   }
-  //   console.log("sort by category");
-  // };
+
 
   handleCategoryClick = (e) => {
     const category = e.target.value;
@@ -166,59 +149,26 @@ export default class DisplayAllProducts extends Component {
 
       <div>
           <AppNavbar/>
-        <header>
-            <div className="topnav">
-                <img className="hp" src= {require(`../Image/Callaghans-Butchers-logo-lrg.png`)} width="250"  alt=""/>
+      
+      
                 <div className="containerSearch">
                 <input id="search" type="text" placeholder="  Search" onChange= {this.handleSearch}/>
                 </div>
-                {/* <a href="Home">Home</a> */}
-              </div>
-        </header>
+               
+       
     <main>
 
             <div className="containerA">
-            <img src={require(`../Image/Callaghans-Circle-logo-400-400x382.png`)}  alt=""width="180" height="180" />
+            <img src={require(`../Image/Callaghans-Circle-logo-400-400x382.png`)}  className="but1" alt="" />
             <h2>Feeding families & friends</h2>
             <h3>since 1906</h3>
-            <img src={require(`../Image/Callaghans-Butchers-meat-HP.jpg`)} alt=""width="650" height="520" />
-            <img  src={require(`../Image/special-offers-banner.png`)}  alt=""width="1000" height="120"/>
+            <img src={require(`../Image/Callaghans-Butchers-meat-HP.jpg`)}  className="but2" alt="" />
+            <img  src={require(`../Image/special-offers-banner.png`)}   className="but3" alt=""/>
             </div>
 
 
     <br/>
-    {/*<div className="container-fluid">*/}
 
-        {localStorage.accessLevel > ACCESS_LEVEL_GUEST ? (
-          <div className="logout">
-            {localStorage.profilePhoto !== "null" ? (
-              <img
-                id="profilePhoto"
-                src={`data:;base64,${localStorage.profilePhoto}`}
-                alt=""
-                style={{ width: "100px", height: "100px" }}
-              />
-            ) : null}
-
-
-            <Logout />
-          </div>
-        ) : (
-          <div>
-            <Link className="green-button" to={"/Login"}>
-              Login
-            </Link>
-            <Link className="blue-button" to={"/Register"}>
-              Register
-            </Link>
-            <Link className="red-button" to={"/ResetDatabase"}>
-              Reset Database
-            </Link>
-            <br />
-            <br />
-            <br />
-          </div>
-        )}
 
 
      <div className="form-container">
@@ -253,13 +203,11 @@ export default class DisplayAllProducts extends Component {
         </select>
       </div>
     </div>
-        {/* <Filters products={this.state.products} /> */}
-
-
+      
 
 
         <div className="table-container">
-          {/*<ProductTable products={this.state.tempProducts}/>*/}
+        
 
           {localStorage.accessLevel >= ACCESS_LEVEL_ADMIN ? (
             <div className="add-new-product">
@@ -269,7 +217,7 @@ export default class DisplayAllProducts extends Component {
             </div>
           ) : null}
 
-            <ProductTable products={this.state.tempProducts} addToCart={this.addToCart}/>
+            <ProductTable  products={this.state.tempProducts} addToCart={this.addToCart}/>
         </div>
       </div>
 </main>
