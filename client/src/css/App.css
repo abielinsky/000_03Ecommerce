@@ -491,10 +491,51 @@ img[alt="special-offers-banner"] {
   margin-top: 20px;
 }
 
-.row {
-  display: flex;
-  background-color: lightgray;
-  flex-wrap: wrap;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================================CSS ABIEL =============================================================*/
+
+/* img{
+    padding-left: 5%;
+    }
+
+    .container {
+    padding-top: 10px;
+    }
+    */
+
+/*.form-container,*/
+/*.table-container*/
+/*{*/
+/*  max-width: 700px;*/
+/*  margin: 0 auto;*/
+/*}*/
+
+/*.form-container*/
+/*{*/
+/*  border:thin solid #aaaaaa;*/
+/*  padding: 20px;*/
+/*  margin-left: auto;*/
+/*  margin-right: auto;*/
+/*  border-radius: 5px;*/
+/*  background: #f7f7f7;*/
+/*}*/
+
+.logout
+{
+  margin-bottom:30px;
 }
 
 .column {
@@ -560,3 +601,4 @@ h6{
 
 
 
+/* ===========================================CSS ABIEL =============================================================*/

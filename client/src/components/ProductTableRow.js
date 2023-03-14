@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 // import {Form, Button, Row} from "react-bootstrap";
+// import {Form, Button, Row} from "react-bootstrap";
 import { ACCESS_LEVEL_GUEST, ACCESS_LEVEL_ADMIN, ACCESS_LEVEL_NORMAL_USER } from "../config/global_constants";
 
 export default class ProductTableRow extends Component {
