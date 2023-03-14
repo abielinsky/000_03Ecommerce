@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {Form, Button, Row} from "react-bootstrap";
+// import {Form, Button, Row} from "react-bootstrap";
 import { ACCESS_LEVEL_GUEST, ACCESS_LEVEL_ADMIN, ACCESS_LEVEL_NORMAL_USER } from "../config/global_constants";
 
 export default class ProductTableRow extends Component {
@@ -80,11 +80,29 @@ export default class ProductTableRow extends Component {
                 </div>
                 <div className="card-footer">
                     {localStorage.accessLevel == ACCESS_LEVEL_NORMAL_USER ? (
-                        <Row>
-                            <div className="col-1"/>
-                            <input className="form-control col-3" name="quantity" type="number" min={0} max={10} value={this.state.quantity} onChange={this.onChange} />
-                            <Button className="default-button col-2" disabled={this.state.quantity<=0}  onClick={()=>this.onSendToCart(this.props.product._id)}>+</Button>
-                        </Row>
+
+
+
+
+
+                        // <Row>
+                        //     <div className="col-1"/>
+                        //     <input className="form-control col-3" name="quantity" type="number" min={0} max={10} value={this.state.quantity} onChange={this.onChange} />
+                        //     <Button className="default-button col-2" disabled={this.state.quantity<=0}  onClick={()=>this.onSendToCart(this.props.product._id)}>+</Button>
+                        // </Row>
+
+                        //todo using css for the card-deck2 in productTable.js
+                        <div className="product-table-row">
+                            <div className="product-table-cell"></div>
+                            <input className="product-table-cell" name="quantity" type="number" min={0} max={10} value={this.state.quantity} onChange={this.onChange} />
+                            <button className="product-table-button" disabled={this.state.quantity <= 0} onClick={() => this.onSendToCart(this.props.product._id)}>+</button>
+                        </div>
+
+
+
+
+
+
                     ) : (
                         null
                     )}

@@ -342,11 +342,71 @@ img[alt="special-offers-banner"] {
 
 
 
+/* todo ============================================================================================*/
 
 
 
 
+.card-deck2 {
 
+  width: 270px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-basis: calc(10% - 270px); /* subtract margin from flex-basis */
+  box-sizing: border-box; /* include padding and border in box-sizing */
+}
+
+/*.card {*/
+/*  width: 270px;*/
+/*  height: auto;*/
+/*  margin-bottom: 20px;*/
+/*  flex-basis: calc(10% - 270px); !* subtract margin from flex-basis *!*/
+/*  box-sizing: border-box; !* include padding and border in box-sizing *!*/
+/*}*/
+
+.card-footer{
+  width: 270px;
+}
+
+
+
+
+.card-body{
+
+  width: 270px;
+}
+
+
+
+.container-wrapper{
+  width: 270px;
+}
+
+
+.product-table-row {
+  display: flex;
+  align-items: center;
+
+}
+
+.product-table-cell {
+  flex: 1;
+
+}
+
+.product-table-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.product-table-button:hover {
+  background-color: #0069d9;
+}
 
 
 
