@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import {Redirect, Link} from "react-router-dom"
 import Form from "react-bootstrap/Form"
-
+import AppNavbar from "./AppNavbar";
 import axios from "axios"
 
 import LinkInClass from ".//LinkInClass"
@@ -70,8 +70,6 @@ export default class AddProduct extends Component
         }
         
         console.log(productObject.image)
-    
-
         axios.post(`${SERVER_HOST}/products`, productObject, {headers:{"authorization":localStorage.token}})
         .then(res => 
         {   
@@ -98,6 +96,8 @@ export default class AddProduct extends Component
     render()
     {        
         return (
+            <>
+                <AppNavbar/>
             <div className="form-container"> 
                 {this.state.redirectToDisplayAllProducts ? <Redirect to="/DisplayAllProducts"/> : null}                                            
                     
@@ -137,6 +137,8 @@ export default class AddProduct extends Component
                     <Link className="red-button" to={"/DisplayAllProducts"}>Cancel</Link>
                 </Form>
             </div>
+
+                </>
         )
     }
 }

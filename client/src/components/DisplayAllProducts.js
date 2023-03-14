@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { AddToCart } from "./Cart/UpdateCart";
+
 import axios from "axios";
 import ProductTable from "./ProductTable";
-// import Filters from "./Filters";
 import Logout from "../components/Logout";
+import AppNavbar from "./AppNavbar";
 import { ACCESS_LEVEL_GUEST, ACCESS_LEVEL_ADMIN, SERVER_HOST } from "../config/global_constants";
 
 export default class DisplayAllProducts extends Component {
@@ -28,6 +30,7 @@ export default class DisplayAllProducts extends Component {
             console.log("Records read");
             this.setState({ products: res.data }, () => {
               this.setState({ tempProducts: this.state.products });
+
             });
           }
         } else {
@@ -116,7 +119,7 @@ export default class DisplayAllProducts extends Component {
   handleCategoryClick = (e) => {
     const category = e.target.value;
     let sortedProducts = [...this.state.products];
-  
+
     if (category === "All") {
       // no filtering necessary
     } else if (category === "Beef") {
@@ -126,7 +129,7 @@ export default class DisplayAllProducts extends Component {
     } else if (category === "Lamb") {
       sortedProducts = sortedProducts.filter(product => product.category === "Lamb");
     }
-  
+
     this.setState({ tempProducts: sortedProducts }, () => {
       console.log("New state:", this.state);
     });
@@ -138,7 +141,7 @@ export default class DisplayAllProducts extends Component {
   handleSearch = (e) => {
     const search = e.target.value.toLowerCase().trim();
     if (search === "") {
-    
+
       return this.state.tempProducts;
     }
     else{
@@ -154,32 +157,39 @@ export default class DisplayAllProducts extends Component {
     }
   }
 
+    addToCart=async(productId, quantity)=>{
+        await AddToCart(productId, quantity);
+    }
+
   render() {
     return (
 
       <div>
-        <header>                                                               
+          <AppNavbar/>
+        <header>
             <div className="topnav">
                 <img className="hp" src= {require(`../Image/Callaghans-Butchers-logo-lrg.png`)} width="250"  alt=""/>
-                <div class="containerSearch">
+                <div className="containerSearch">
                 <input id="search" type="text" placeholder="  Search" onChange= {this.handleSearch}/>
                 </div>
                 {/* <a href="Home">Home</a> */}
               </div>
         </header>
-<main>
+    <main>
 
-            <div class="containerA">
+            <div className="containerA">
             <img src={require(`../Image/Callaghans-Circle-logo-400-400x382.png`)}  alt=""width="180" height="180" />
-            <h2>Feeding families & friends</h2> 
+            <h2>Feeding families & friends</h2>
             <h3>since 1906</h3>
             <img src={require(`../Image/Callaghans-Butchers-meat-HP.jpg`)} alt=""width="650" height="520" />
             <img  src={require(`../Image/special-offers-banner.png`)}  alt=""width="1000" height="120"/>
             </div>
-        
 
 
-{localStorage.accessLevel > ACCESS_LEVEL_GUEST ? (
+    <br/>
+    {/*<div className="container-fluid">*/}
+
+        {localStorage.accessLevel > ACCESS_LEVEL_GUEST ? (
           <div className="logout">
             {localStorage.profilePhoto !== "null" ? (
               <img
@@ -189,6 +199,8 @@ export default class DisplayAllProducts extends Component {
                 style={{ width: "100px", height: "100px" }}
               />
             ) : null}
+
+
             <Logout />
           </div>
         ) : (
@@ -218,7 +230,7 @@ export default class DisplayAllProducts extends Component {
           <option value="Descending">Z-A</option>
         </select>
       </div>
-       
+
       <select  id="alignFilter" onChange={this.handleDescClick}>
               <option value="Name list">Description List </option>
               <option value="Ascending">Ascending</option>
@@ -240,14 +252,14 @@ export default class DisplayAllProducts extends Component {
       <option value="Lamb">Lamb</option>
         </select>
       </div>
-</div>
+    </div>
         {/* <Filters products={this.state.products} /> */}
 
 
-      
-        
+
+
         <div className="table-container">
-          <ProductTable products={this.state.tempProducts}/>
+          {/*<ProductTable products={this.state.tempProducts}/>*/}
 
           {localStorage.accessLevel >= ACCESS_LEVEL_ADMIN ? (
             <div className="add-new-product">
@@ -256,14 +268,16 @@ export default class DisplayAllProducts extends Component {
               </Link>
             </div>
           ) : null}
+
+            <ProductTable products={this.state.tempProducts} addToCart={this.addToCart}/>
         </div>
       </div>
 </main>
 
 
-<img  src={require(`../Image/bakery-53.png`)} className="imagen1"  alt=""/>
+    <img  src={require(`../Image/bakery-53.png`)} className="imagen1"  alt=""/>
       <footer>
-     
+
             <div className="row">
                 <div className="column">
                     <h3><strong>Opening hours:</strong></h3>
@@ -280,15 +294,16 @@ export default class DisplayAllProducts extends Component {
 
                 <div className="column">
                     <h3><strong>Follow us:</strong></h3>
-            
+
                     <a href="https://www.facebook.com/callaghan.bettystown/"><img src={require(`../Image/facebook.png`)}   class="icon-style" width="50" alt="facebook"/></a>
                     <a href="https://www.instagram.com/callaghanbutchers/"><img src={require(`../Image/instagram_grey_icon.png`)} class="icon-style"   width="50" alt="instagram"/></a>
-                </div>  
+                </div>
             </div>
         </footer>
 
 
       </div>
+
     );
   }
 }

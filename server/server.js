@@ -18,6 +18,8 @@ app.use(require(`cors`)({credentials: true, origin: process.env.LOCAL_HOST}))
 // Routers
 app.use(require(`./routes/products`))
 app.use(require(`./routes/users`))
+app.use(require(`./routes/cart`))
+app.use(require(`./routes/orders`))
 
 
 // Port

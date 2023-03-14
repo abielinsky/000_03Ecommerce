@@ -61,11 +61,11 @@ export default class Filters extends Component {
           if (res.data.errorMessage) {
             console.log(res.data.errorMessage);
           } else {
-            console.log("Record added");
+            console.log("Record addeddddddddddddddddddd");
             this.setState({ redirectToDisplayAllProducts: true });
           }
         } else {
-          console.log("Record not added");
+          console.log("Record not addeddddddddddddddddddd");
         }
       });
   };

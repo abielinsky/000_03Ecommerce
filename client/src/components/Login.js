@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import {Redirect, Link} from "react-router-dom"
 import axios from "axios"
 
+import AppNavbar from "./AppNavbar";
 import LinkInClass from ".//LinkInClass"
 import {SERVER_HOST} from "../config/global_constants"
 
@@ -62,6 +63,8 @@ export default class Login extends Component
     render()
     {            
         return (
+            <>
+                <AppNavbar/>
             <form className="form-container" noValidate = {true} id = "loginOrRegistrationForm">
                 <h2>Login</h2>
                 
@@ -88,6 +91,7 @@ export default class Login extends Component
                 <LinkInClass value="Login" className="green-button" onClick={this.handleSubmit}/> 
                 <Link className="red-button" to={"/DisplayAllProducts"}>Cancel</Link>                                      
             </form>
+                </>
         )
     }
 }
