@@ -77,7 +77,7 @@ background-color: #a01020;
 background-color: #1020a0;
 }
 
-input [type="button"] */
+input [type="button"]
 {
 color:pink;
 }
@@ -337,3 +337,162 @@ h3 {
 img[alt="special-offers-banner"] {
   margin-top: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================================CSS ABIEL =============================================================*/
+
+/* img{
+    padding-left: 5%;
+    }
+
+    .container {
+    padding-top: 10px;
+    }
+    */
+
+/*.form-container,*/
+/*.table-container*/
+/*{*/
+/*  max-width: 700px;*/
+/*  margin: 0 auto;*/
+/*}*/
+
+/*.form-container*/
+/*{*/
+/*  border:thin solid #aaaaaa;*/
+/*  padding: 20px;*/
+/*  margin-left: auto;*/
+/*  margin-right: auto;*/
+/*  border-radius: 5px;*/
+/*  background: #f7f7f7;*/
+/*}*/
+
+.logout
+{
+  margin-bottom:30px;
+}
+
+.green-button,
+.red-button,
+.blue-button {
+  padding: 7px 10px;
+  color: #fff;
+  margin-right: 10px;
+  position: relative;
+  top: 1px;
+  text-decoration: none;
+  cursor:pointer;
+}
+
+.green-button
+{
+  background-color: #28a745;
+}
+
+.red-button
+{
+  background-color: #dc3545;
+}
+
+.blue-button
+{
+  background-color: #3545dc;
+}
+
+.green-button:hover,
+.red-button:hover,
+.blue-button:hover
+{
+  text-decoration: none;
+  color:#fff;
+}
+
+.green-button:hover
+{
+  background-color: #107020;
+}
+
+.red-button:hover
+{
+  background-color: #a01020;
+}
+
+.blue-button:hover
+{
+  background-color: #1020a0;
+}
+
+input [type="button"] *
+{
+  color:pink;
+}
+
+
+.add-new-car
+{
+  margin-top:1em;
+}
+
+
+
+
+/* .container {
+  display: inline-block;
+  width: 25%;
+  box-sizing: border-box;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container:nth-child(4n) {
+  margin-right: 0;
+} */
+
+/* .card-box{
+  display: inline-block;
+  width: 25%;
+  box-sizing: border-box;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+} */
+
+
+.green-button,
+.red-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.green-button {
+  background-color: green;
+}
+
+.red-button {
+  background-color: red;
+}
+
+
+/* clear the right margin on the last element in each row */
+/* .container:nth-child(4n+1) {
+  clear: both;
+} */
+
+/* ===========================================CSS ABIEL =============================================================*/
