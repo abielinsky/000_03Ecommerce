@@ -284,7 +284,15 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 100px;
 
+}
+
+
+/**/
+.form-container{
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 
@@ -688,6 +696,9 @@ button.red-button:focus {
 /*====================================================================================================================*/
 /*====================================================================================================================*/
 
+.navbar {
+  padding: 0px 0px -60px 0px;
+}
 
 
 
