@@ -24,6 +24,7 @@ import ListOrders from "./components/Orders/List"
 import ViewOrder from "./components/Orders/View"
 
 
+
 import {ACCESS_LEVEL_GUEST} from "./config/global_constants"
 
 
@@ -60,7 +61,7 @@ export default class App extends Component
                     <LoggedInRoute exact path="/Products/Load" component={LoadProducts} />
                     <LoggedInRoute exact path="/Products" component={DisplayAllProducts} />
                     <LoggedInRoute exact path="/Products/Add" component={AddProduct} />
-
+                
                     <Route exact path="/" component={DisplayAllProducts} />
                     <Route path="*" component={DisplayAllProducts}/>
 

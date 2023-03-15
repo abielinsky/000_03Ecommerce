@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import {Form, Button, Row} from "react-bootstrap";
-// import {Form, Button, Row} from "react-bootstrap";
-import { ACCESS_LEVEL_GUEST, ACCESS_LEVEL_ADMIN, ACCESS_LEVEL_NORMAL_USER } from "../config/global_constants";
-
+import { ACCESS_LEVEL_ADMIN, ACCESS_LEVEL_NORMAL_USER } from "../config/global_constants";
+import StarRating from "./StarRating";
 export default class ProductTableRow extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
         quantity:0,
-      products: [],
-      activeIndex: 0,
-
-    };
+        products: [],
+        rating: 0,
+        activeIndex: 0,
+        ratingMessage: ""
+      };
   }
 
 
@@ -74,6 +73,7 @@ export default class ProductTableRow extends Component {
                     <p className=""><strong>wight:</strong> {this.props.product.weight}</p>
                     <p className=""><strong>category:</strong> {this.props.product.category}</p>
                 </div>
+                <StarRating rating={this.props.product.rating} />
 
                 <div className="">
                     {localStorage.accessLevel == ACCESS_LEVEL_NORMAL_USER ? (

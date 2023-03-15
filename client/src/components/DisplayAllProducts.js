@@ -4,9 +4,10 @@ import { AddToCart } from "./Cart/UpdateCart";
 
 import axios from "axios";
 import ProductTable from "./ProductTable";
-import Logout from "../components/Logout";
 import AppNavbar from "./AppNavbar";
-import { ACCESS_LEVEL_GUEST, ACCESS_LEVEL_ADMIN, SERVER_HOST } from "../config/global_constants";
+
+
+import {  ACCESS_LEVEL_ADMIN, SERVER_HOST } from "../config/global_constants";
 
 export default class DisplayAllProducts extends Component {
   constructor(props) {

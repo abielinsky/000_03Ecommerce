@@ -626,18 +626,6 @@ button.red-button:focus {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 .filter-container {
   display: flex;
   flex-wrap: wrap;
@@ -684,3 +672,30 @@ button.red-button:focus {
   font-size: 16px;
   font-weight: 500;
 }
+
+.star-rating {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #bcbfc1;
+  cursor: pointer;
+}
+
+.star-rating .star {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin: 0 0.1em;
+  padding: 0.1em 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.star-rating .star:hover,
+.star-rating .star.filled {
+  color: #ffcd38;
+}
+
+
+
+
+
