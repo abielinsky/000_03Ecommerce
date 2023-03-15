@@ -140,6 +140,11 @@ export default class ViewCart extends Component {
                         >
                           Delete
                         </Button>
+
+
+
+
+
                       </div>
                     </div>
                     <br />
