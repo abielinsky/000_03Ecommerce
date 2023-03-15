@@ -17,7 +17,6 @@ export default class ProductTableRow extends Component {
   }
 
 
-
   handlePrevClick = () => {
     const { activeIndex } = this.state;
     const lastIndex = this.props.product.image.length - 1;
@@ -40,7 +39,6 @@ export default class ProductTableRow extends Component {
     });
     console.log(this.state.activeIndex)
   }
-
 
 
     componentDidMount(){
@@ -76,19 +74,20 @@ export default class ProductTableRow extends Component {
                     <p className=""><strong>wight:</strong> {this.props.product.weight}</p>
                     <p className=""><strong>category:</strong> {this.props.product.category}</p>
                 </div>
+
                 <div className="">
                     {localStorage.accessLevel == ACCESS_LEVEL_NORMAL_USER ? (
                         <div>
-                            <div className="col-1"/>
-                            <input className="form-control col-3" name="quantity" type="number" min={0} max={10} value={this.state.quantity} onChange={this.onChange} />
-                            <button className="default-button col-2" disabled={this.state.quantity<=0}  onClick={()=>this.onSendToCart(this.props.product._id)}>+</button>
+                            <div className="container"/>
+                            <input name="quantity" type="number" min={0} max={10} value={this.state.quantity} onChange={this.onChange} />
+                            <button  disabled={this.state.quantity<=0}  onClick={()=>this.onSendToCart(this.props.product._id)}>+</button>
                         </div>
                     ) : (
                         null
                     )}
 
                     {parseInt(localStorage.accessLevel) >= ACCESS_LEVEL_ADMIN ? (
-                        <div>
+                        <div className="container">
                             <Link className="green-button" to={"/EditProduct/" + this.props.product._id}> Edit </Link>
                             <Link className="red-button" to={"/DeleteProduct/" + this.props.product._id}> Delete </Link>
                         </div>

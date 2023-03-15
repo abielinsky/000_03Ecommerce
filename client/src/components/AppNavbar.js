@@ -41,7 +41,7 @@ export default class AppNavbar extends Component {
                         <strong>
                             {localStorage.name ? `Welcome ${localStorage.name}` : ""}
                         </strong>
-                        {/* {localStorage.profilePhoto !== "null" ? ( <img id="profilePhoto" src={`data:;base64,${localStorage.profilePhoto}`}  style={{ width: "125px", height: "100px" }}/>) : null} */}
+                        {localStorage.profilePhoto !== "null" ? ( <img id="profilePhoto" src={`data:;base64,${localStorage.profilePhoto}`}  style={{ width: "70px", height: "60px" }}/>) : null}
                     </Navbar.Text>
                     <span>&#160;&#160;</span>
                     <Logout />

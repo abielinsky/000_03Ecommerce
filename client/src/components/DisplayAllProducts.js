@@ -148,12 +148,9 @@ export default class DisplayAllProducts extends Component {
     return (
 
       <div>
-          <AppNavbar/>
+          <AppNavbar />
       
       
-                <div className="containerSearch">
-                <input id="search" type="text" placeholder="  Search" onChange= {this.handleSearch}/>
-                </div>
                
        
     <main>
@@ -169,42 +166,49 @@ export default class DisplayAllProducts extends Component {
 
     <br/>
 
+    <div class="filter-container">
+  <div class="filter-section">
+    <div class="filter-label">Sort by:</div>
+    <select class="filter-select" id="alignFilter" onChange={this.handleClick}>
+      <option value="Name list">Name List</option>
+      <option value="Ascending">A-Z</option>
+      <option value="Descending">Z-A</option>
+    </select>
+  </div>
 
+  <div class="filter-section">
+    <div class="filter-label">Filter by description:</div>
+    <select class="filter-select" id="alignFilter" onChange={this.handleDescClick}>
+      <option value="Name list">Description List </option>
+      <option value="Ascending">Ascending</option>
+      <option value="Descending">Descending</option>
+    </select>
+  </div>
 
-     <div className="form-container">
+  <div class="filter-section">
+    <div class="filter-label">Filter by price:</div>
+    <select class="filter-select" id="alignFilter" onChange={this.handlePriceClick}>
+      <option value="Name list">Price List </option>
+      <option value="Ascending">Low to high</option>
+      <option value="Descending">High to low</option>
+    </select>
+  </div>
 
-     <div className="sort-container">
-        <select id="alignFilter" onChange={this.handleClick}>
-          <option value="Name list">Name List</option>
-          <option value="Ascending">A-Z</option>
-          <option value="Descending">Z-A</option>
-        </select>
-      </div>
-
-      <select  id="alignFilter" onChange={this.handleDescClick}>
-              <option value="Name list">Description List </option>
-              <option value="Ascending">Ascending</option>
-              <option value="Descending">Descending</option>
-            </select>
-
-            <select  id="alignFilter" onChange={this.handlePriceClick}>
-              <option value="Name list">Price List </option>
-              <option value="Ascending">Low</option>
-              <option value="Descending">High</option>
-            </select>
-
-            <div className="form-container">
-     <div className="sort-container">
-        <select id="alignFilter" onChange={this.handleCategoryClick}>
-        <option value="All">Category</option>
+  <div class="filter-section">
+    <div class="filter-label">Filter by category:</div>
+    <select class="filter-select" id="alignFilter" onChange={this.handleCategoryClick}>
+      <option value="All">All categories</option>
       <option value="Beef">Beef</option>
       <option value="Pork">Pork</option>
       <option value="Lamb">Lamb</option>
-        </select>
-      </div>
-    </div>
+    </select>
+  </div>
+</div>
       
 
+    <div className="containerSearch">
+                <input id="search" type="text" placeholder="  Search" onChange= {this.handleSearch}/>
+                </div>
 
         <div className="table-container">
         
@@ -219,7 +223,7 @@ export default class DisplayAllProducts extends Component {
 
             <ProductTable  products={this.state.tempProducts} addToCart={this.addToCart}/>
         </div>
-      </div>
+      
 </main>
 
 
