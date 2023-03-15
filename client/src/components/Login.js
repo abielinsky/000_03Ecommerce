@@ -16,7 +16,8 @@ export default class Login extends Component
         this.state = {
             email:"",
             password:"",
-            isLoggedIn:false
+            isLoggedIn:false,
+            errorMessage: ""
         }
     }
         
@@ -29,6 +30,21 @@ export default class Login extends Component
     
     handleSubmit = (e) => 
     {
+        e.preventDefault(); // Prevent the default form submission behavior
+        
+        // Check if the email and password fields are not empty
+        if (this.state.email.trim() === "" || this.state.password.trim() === "") {
+            this.setState({errorMessage: "Please enter your email and password"});
+            return;
+        }
+        
+        // Check if the email is in a valid format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(this.state.email)) {
+            this.setState({errorMessage: "Please enter a valid email address"});
+            return;
+        }
+    
         axios.post(`${SERVER_HOST}/users/login/${this.state.email}/${this.state.password}`)
         .then(res => 
         {               
@@ -36,7 +52,7 @@ export default class Login extends Component
             {
                 if (res.data.errorMessage)
                 {
-                    console.log(res.data.errorMessage)    
+                    this.setState({errorMessage: res.data.errorMessage}); 
                 }
                 else // user successfully logged in
                 { 
@@ -44,7 +60,7 @@ export default class Login extends Component
                     
                     localStorage.name = res.data.name
                     localStorage.accessLevel = res.data.accessLevel
-
+    
                     localStorage.profilePhoto = res.data.profilePhoto
                     localStorage.token = res.data.token
                     
@@ -53,11 +69,10 @@ export default class Login extends Component
             }
             else
             {
-                console.log("Login failed")
+                this.setState({errorMessage: "Login failed"});
             }
         })                
     }
-
 
 
     render()
@@ -87,7 +102,9 @@ export default class Login extends Component
                     value={this.state.password} 
                     onChange={this.handleChange}
                 /><br/><br/>
-                
+
+                {this.state.errorMessage && <p className="error-message">{this.state.errorMessage}</p>}
+
                 <LinkInClass value="Login" className="green-button" onClick={this.handleSubmit}/> 
                 <Link className="red-button" to={"/DisplayAllProducts"}>Cancel</Link>                                      
             </form>
