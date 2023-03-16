@@ -56,12 +56,9 @@ export default class EditProduct extends Component {
   };
 
   
-  handleFileChange = (e) =>
-  {
-      this.setState({selectedFile: e.target.files})
-
+  handleFileChange = (e) => {
+    this.setState({selectedFile: e.target.files})
   }
-
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -76,10 +73,9 @@ export default class EditProduct extends Component {
     };
 
     let arr = Array.from(this.state.selectedFile)
-    arr.forEach((file) => {
-      productObject.image.push(file.name)
-    })
-
+arr.forEach((file) => {
+  productObject.image.push(file.name)
+})
     if(this.state.selectedFile.length < 1) {
       alert("Please select a file to upload")
       return;
@@ -281,10 +277,12 @@ export default class EditProduct extends Component {
                 name="image"
                 id="image"
                 className="form-control-file"
-                onChange={this.handleFileChange}
-                multiple={true}
+               onChange={this.handleFileChange}
+                 multiple={true} 
             />
           </div>
+
+
 
           <div className="form-group">
             <label htmlFor="category">Category</label>
@@ -304,9 +302,6 @@ export default class EditProduct extends Component {
 
           <a href="/DisplayAllProducts" className="red-button">Cancel</a>
         </form>
-
-
-
 
 
 
