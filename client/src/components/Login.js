@@ -81,10 +81,11 @@ export default class Login extends Component
             <>
                 <AppNavbar/>
             <form className="form-container" noValidate = {true} id = "loginOrRegistrationForm">
-                <h2>Login</h2>
+                <h7>Login</h7>
                 
                 {this.state.isLoggedIn ? <Redirect to="/DisplayAllProducts"/> : null} 
                 
+                <div className="form-group" >
                 <input 
                     type = "email" 
                     name = "email" 
@@ -92,8 +93,11 @@ export default class Login extends Component
                     autoComplete="email"
                     value={this.state.email} 
                     onChange={this.handleChange}
-                /><br/>
+                    className="form-control"
+                />
+                 </div><br/>
                     
+                 <div className="form-group" >
                 <input 
                     type = "password" 
                     name = "password" 
@@ -101,7 +105,9 @@ export default class Login extends Component
                     autoComplete="password"
                     value={this.state.password} 
                     onChange={this.handleChange}
-                /><br/><br/>
+                    className="form-control"
+                />
+                 </div><br/><br/>
 
                 {this.state.errorMessage && <p className="error-message">{this.state.errorMessage}</p>}
 

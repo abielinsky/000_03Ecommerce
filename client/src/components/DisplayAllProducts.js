@@ -181,8 +181,8 @@ export default class DisplayAllProducts extends Component {
     <div class="filter-label">Filter by description:</div>
     <select class="filter-select" id="alignFilter" onChange={this.handleDescClick}>
       <option value="Name list">Description List </option>
-      <option value="Ascending">Ascending</option>
-      <option value="Descending">Descending</option>
+      <option value="Ascending">A-Z</option>
+      <option value="Descending">Z-A</option>
     </select>
   </div>
 
