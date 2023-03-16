@@ -749,7 +749,8 @@ h7{
     /*margin-bottom: 20px;*/
     width: auto;
     flex-direction: column;
-    margin-left: 20px;
+    /* margin-left: 20px; */
+    display:flex;
   }
 
   /* Estilo para los elementos card1 */

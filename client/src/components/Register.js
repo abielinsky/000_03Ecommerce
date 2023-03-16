@@ -134,6 +134,7 @@ export default class Register extends Component {
                           onChange={this.handleChange}
                           ref={(input) => { this.inputToFocus = input }}
                           className="form-control"
+                          required
                       />
                       {!isNameValid && <div className="error-message">Please enter your name</div>}
                     
@@ -148,6 +149,7 @@ export default class Register extends Component {
                           value={email}
                           onChange={this.handleChange}
                           className="form-control"
+                          required
                       />
                       {!isEmailValid && <div className="error-message">Please enter a valid email address</div>}
                   </div>
@@ -162,6 +164,7 @@ export default class Register extends Component {
                           value={password}
                           onChange={this.handleChange}
                           className="form-control"
+                          required
                       />
                       {!isPasswordValid && <div className="error-message">Please enter a valid password (at least ten-digits long and contains at least one lowercase letter, one uppercase letter, one digit and one of the following characters: £!#€$%^&*)</div>}
                   </div>
@@ -175,6 +178,7 @@ export default class Register extends Component {
                           value={confirmPassword}
                           onChange={this.handleChange}
                           className="form-control"
+                          required
                       />
                       {!isConfirmPasswordValid && <div className="error-message">Please confirm your password</div>}
                   </div>
@@ -184,6 +188,7 @@ export default class Register extends Component {
                           type="file"
                           onChange={this.handleFileChange}
                           className="form-control"
+                          required
                       />
                   </div>
   
