@@ -13,6 +13,9 @@ export default class LoadProducts extends Component {
         };
     }
 
+    // test
+
+
     componentDidMount() {
         let url = `${process.env.PUBLIC_URL}/data.json`;
         fetch(url)
