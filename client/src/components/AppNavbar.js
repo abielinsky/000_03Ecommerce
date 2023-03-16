@@ -55,7 +55,7 @@ export default class AppNavbar extends Component {
             <Nav className="me-auto">
                 <Nav.Link href={"/Register"}><a>Register</a></Nav.Link>
                 <Nav.Link href={"/Login"}><a>Login</a></Nav.Link>
-                <Nav.Link href={"/ResetDatabase"}><a><img className="shopping-cart-icon" src= {require(`../Image/shopping_cart.png`)}   alt=""/></a></Nav.Link>
+                <Nav.Link href={"/ResetDatabase"}><img className="shopping-cart-icon" src= {require(`../Image/shopping_cart.png`)}   alt=""/></Nav.Link>
             </Nav>
         );
 
