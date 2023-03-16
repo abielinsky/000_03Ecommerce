@@ -4,6 +4,10 @@ const cartModel = require("../models/cart");
 const orderModel = require("../models/order");
 const verifyUsersJWTPassword = require("./misc");
 
+
+
+
+
 router.get(`/orders`, verifyUsersJWTPassword, async (req, res) => {
     let token = req.decodedToken;
     let user = await userModel.findOne({email:token.email});
