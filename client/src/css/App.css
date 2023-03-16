@@ -696,6 +696,70 @@ button.red-button:focus {
 }
 
 
+/*===========
+/*===========================================================================================*/
+
+/*===========================================================================================*/
+
+/* Para pantallas con un ancho máximo de 768px */
+@media (max-width: 576px) {
+
+  .table-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .container-wrapper{
+    width: auto;
+
+  }
+
+  .desWrap{
+    margin-left: 20px;
+    width: 320px;
+  }
+
+  .star-rating{
+    width: 250px;
+    flex-direction: row;
+    margin-left: 20px;
+  }
+
+  /* Estilo para los elementos card-deck2 */
+  .card-deck2 {
+    /*flex-basis: 100%;*/
+    /*margin-bottom: 20px;*/
+    width: auto;
+    flex-direction: column;
+    margin-left: 20px;
+  }
+
+  /* Estilo para los elementos card1 */
+  .card1 {
+    /*width: 500px;*/
+    flex-direction: column;
+    margin-left: 20px;
+
+  }
+
+
+  .navbar {
+    width: auto;
+  }
+
+  .next_round{
+    margin-right: -330px;
+  }
+
+  .previous_round{
+    margin-left: -15px;
+  }
+
+
+
+}
 
 
 
