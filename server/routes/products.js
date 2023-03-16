@@ -7,6 +7,9 @@ const fs = require('fs')
 const JWT_PRIVATE_KEY = fs.readFileSync(process.env.JWT_PRIVATE_KEY_FILENAME, 'utf8')
 
 
+
+
+
 // read all records
 router.get(`/products`, (req, res) =>
 {
