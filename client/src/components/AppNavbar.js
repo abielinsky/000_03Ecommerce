@@ -33,8 +33,9 @@ export default class AppNavbar extends Component {
         const authLinks = (
             <Nav className="me-auto">
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/cart">Cart</Nav.Link>
                 <Nav.Link href="/orders">Orders</Nav.Link>
+                <Nav.Link href="/cart"><img className="shopping-cart-icon" src= {require(`../Image/shopping_cart.png`)}   alt=""/></Nav.Link>
+             
 
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
@@ -54,7 +55,7 @@ export default class AppNavbar extends Component {
             <Nav className="me-auto">
                 <Nav.Link href={"/Register"}><a>Register</a></Nav.Link>
                 <Nav.Link href={"/Login"}><a>Login</a></Nav.Link>
-                <Nav.Link href={"/ResetDatabase"}><a>Reset db</a></Nav.Link>
+                <Nav.Link href={"/ResetDatabase"}><a><img className="shopping-cart-icon" src= {require(`../Image/shopping_cart.png`)}   alt=""/></a></Nav.Link>
             </Nav>
         );
 
