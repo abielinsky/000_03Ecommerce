@@ -25,7 +25,6 @@ export const Payment= class extends Component{
         return actions.order.create({purchase_units:[{amount:{value:this.props.amount}}]})
     }
     
-    
     onApprove = paymentData =>
     {      
         axios.post(`${SERVER_HOST}/orders/${paymentData.orderID}`, undefined, { headers: { "authorization": localStorage.token}})
@@ -41,7 +40,6 @@ export const Payment= class extends Component{
                            redirectToPayPalMessage:true}) 
         })
     }
- 
         
     onError = errorData => 
     {
@@ -56,9 +54,7 @@ export const Payment= class extends Component{
         this.setState({payPalMessageType:PayPalMessage.messageType.CANCEL, 
                        redirectToPayPalMessage:true})       
     }
-    
-
-                
+       
     render()
     {
         return (
