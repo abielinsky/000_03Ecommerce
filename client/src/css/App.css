@@ -410,7 +410,7 @@ h6{
   justify-content: space-between;
 }
 
-.card-deck2 .card1 {
+.card-deck2  {
   width: calc(20% - 10px);
   margin: 5px;
   box-sizing: border-box;
@@ -483,7 +483,7 @@ h6{
 }
 
 
-@media (min-width: 576px){
+/* @media (min-width: 576px){
 
 .card1 {
 
@@ -498,10 +498,12 @@ h6{
   border-radius: 10px;
   justify-content: space-between;
    
-}
 
 
 }
+
+
+} */
 
 .card1 {
   margin-right: 5px;
@@ -750,31 +752,30 @@ h7{
     width: auto;
     flex-direction: column;
     /* margin-left: 20px; */
-    display:flex;
+    /* display:flex; */
+    margin-right: 30px;
   }
 
   /* Estilo para los elementos card1 */
   .card1 {
     /*width: 500px;*/
     flex-direction: column;
-    margin-left: 20px;
+    margin: 10px;
+   
 
   }
-
 
   .navbar {
     width: auto;
   }
 
   .next_round{
-    margin-right: -330px;
+    margin-right: -20px;
   }
 
   .previous_round{
     margin-left: -15px;
   }
-
-
 
 }
 
