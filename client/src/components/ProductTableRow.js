@@ -73,7 +73,8 @@ export default class ProductTableRow extends Component {
                     <p className=""><strong>wight:</strong> {this.props.product.weight}</p>
                     <p className=""><strong>category:</strong> {this.props.product.category}</p>
                 </div>
-                <StarRating rating={this.props.product.rating} />
+                
+                <StarRating className="rating" rating={this.props.product.rating} />
 
                 <div className="">
                     {localStorage.accessLevel == ACCESS_LEVEL_NORMAL_USER ? (

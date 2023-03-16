@@ -692,6 +692,14 @@ button.red-button:focus {
   font-weight: bold;
 }
 
+.rating{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .star-rating .star:hover,
 .star-rating .star.filled {
   color: #ffcd38;
