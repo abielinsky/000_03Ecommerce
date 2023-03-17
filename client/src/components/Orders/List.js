@@ -30,10 +30,10 @@ export default class ViewHistory extends Component {
             <table className="table">
               <thead>
                 <tr>
-                  <th scope="col">id</th>
-                  <th scope="col">bill</th>
+                  <th scope="col">Id</th>
+                  <th scope="col">Bill</th>
                   <th scope="col">Payment Order</th>
-                  <th scope="col">added</th>
+                  <th scope="col">Added</th>
                 </tr>
               </thead>
               <tbody>

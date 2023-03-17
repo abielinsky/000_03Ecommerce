@@ -69,7 +69,8 @@ export default class ViewHistory extends Component {
                 </thead>
                 <tbody>
                   {this.state.order.products.map((order) => (
-                    <tr key={order._id}>
+                   
+                    <tr  key={order._id}>
                       <th scope="row">{order.name}</th>
                       <td>{order.quantity}</td>
                       <td>{order.price}</td>
