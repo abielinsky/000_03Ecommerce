@@ -15,21 +15,21 @@ export default class AppNavbar extends Component {
 
     render() {
         const isAuthenticated = localStorage.accessLevel > ACCESS_LEVEL_GUEST;
-        const testLinks = (
-            <>
-                <Navbar bg="dark" variant="dark">
-                    <Container>
-                        <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
-                        <Navbar.Toggle />
-                        <Navbar.Collapse className="justify-content-end">
-                            <Navbar.Text>
-                                Signed in as: <a href="#login">Mark Otto</a>
-                            </Navbar.Text>
-                        </Navbar.Collapse>
-                    </Container>
-                </Navbar>
-            </>
-        );
+        // const testLinks = (
+        //     <>
+        //         <Navbar bg="dark" variant="dark">
+        //             <Container>
+        //                 <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
+        //                 <Navbar.Toggle />
+        //                 <Navbar.Collapse className="justify-content-end">
+        //                     <Navbar.Text>
+        //                         Signed in as: <a href="#login">Mark Otto</a>
+        //                     </Navbar.Text>
+        //                 </Navbar.Collapse>
+        //             </Container>
+        //         </Navbar>
+        //     </>
+        // );
         const authLinks = (
             <Nav className="me-auto">
                 <Nav.Link href="/">Home</Nav.Link>
