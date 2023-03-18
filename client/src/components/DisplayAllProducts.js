@@ -99,7 +99,6 @@ export default class DisplayAllProducts extends Component {
 
 
 
-
   handleCategoryClick = (e) => {
     const category = e.target.value;
     let sortedProducts = [...this.state.products];
@@ -167,6 +166,10 @@ export default class DisplayAllProducts extends Component {
 
     <br/>
 
+    <div className="containerSearch">
+                <input id="search" type="text" placeholder="  Search" onChange= {this.handleSearch}/>
+                </div>
+                
     <div class="filter-container">
   <div class="filter-section">
     <div class="filter-label">Sort by:</div>
@@ -207,9 +210,7 @@ export default class DisplayAllProducts extends Component {
 </div>
       
 
-    <div className="containerSearch">
-                <input id="search" type="text" placeholder="  Search" onChange= {this.handleSearch}/>
-                </div>
+   
 
         <div className="table-container">
         
